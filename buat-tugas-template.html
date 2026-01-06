@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugaskan Proyek - VINIX7 TaskFlow</title>
+    <link rel="stylesheet" href="style-taskflow.css">
+    <script src="theme.js" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="img/vinix.jpg" alt="VINIX7 Logo" class="nav-logo">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li class="nav-item">
+                    <a href="notifikasi.html" class="nav-link nav-icon-link">
+                        <span class="notification-dot hidden"></span>
+                        <svg class="nav-icon" viewBox="0 0 448 512" fill="currentColor"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47.1-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24.1-6.4 29.2-17.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 448c-17.7 0-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32s-14.3-32-32-32z"/></svg>
+                    </a>
+                </li>
+                <li class="nav-item"><a href="profil-mentor.html" class="nav-link">Profil</a></li>
+                <li class="nav-item"><a href="raport-saya.html" class="nav-link">Raport Saya</a></li>
+                <li class="nav-item"><a href="#" id="nav-logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="form-container">
+        <header class="form-header">
+            <h2>Tugaskan Proyek (Template)</h2>
+            <p>Tugas ini akan otomatis dibuatkan salinannya untuk setiap kelompok di divisi tujuan.</p>
+        </header>
+        <form id="form-tugas-template">
+            <div class="form-group">
+                <label for="judul-template">Judul Tugas (Template)</label>
+                <input type="text" id="judul-template" placeholder="Contoh: Laporan Progres Mingguan" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="divisi-tujuan">Tugaskan ke Divisi</label>
+                    <select id="divisi-tujuan" required>
+                        <option value="">Pilih Divisi...</option>
+                        <option value="Web Dev & UI/UX">Web Dev & UI/UX</option>
+                        <option value="Bisnis Digital">Bisnis Digital</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="deadline-template">Deadline</label>
+                    <input type="date" id="deadline-template" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="deskripsi-template">Deskripsi / Instruksi Tugas</label>
+                <textarea id="deskripsi-template" rows="6" placeholder="Jelaskan instruksi..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="lampiran">Lampiran (Opsional)</label>
+                <input type="file" id="lampiran" class="input-file">
+            </div>
+            <div class="form-actions">
+                <a href="dashboard.html" class="btn-secondary">Batal</a>
+                <button type="submit" class="btn-primary">Tugaskan Sekarang</button>
+            </div>
+        </form>
+    </div>
+    <script src="global.js"></script>
+    <script src="buat-tugas-template.js"></script> </body>
+</html>

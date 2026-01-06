@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi - VINIX7 TaskFlow</title>
+    <link rel="stylesheet" href="style-taskflow.css">
+    <script src="theme.js" defer></script> </head>
+<body>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="img/vinix.jpg" alt="VINIX7 Logo" class="nav-logo">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li class="nav-item">
+                    <a href="notifikasi.html" class="nav-link nav-icon-link active">
+                        <span class="notification-dot hidden"></span> <svg class="nav-icon" viewBox="0 0 448 512" fill="currentColor"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47.1-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24.1-6.4 29.2-17.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 448c-17.7 0-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32s-14.3-32-32-32z"/></svg>
+                    </a>
+                </li>
+                <li class="nav-item"><a href="profil-mentor.html" class="nav-link">Profil</a></li>
+                <li class="nav-item"><a href="raport-saya.html" class="nav-link">Raport Saya</a></li>
+                <li class="nav-item"><a href="#" id="nav-logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="form-container" style="max-width: 800px;">
+        <header class="form-header" style="text-align: left;">
+            <h2>Notifikasi</h2>
+        </header>
+
+        <div class="notification-list" id="notification-list-container">
+            </div>
+    </div>
+
+    <script src="global.js"></script>
+    <script src="notifikasi.js"></script>
+</body>
+</html>

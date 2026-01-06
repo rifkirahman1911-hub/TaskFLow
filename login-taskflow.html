@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VINIX7 TaskFlow</title>
+    <link rel="stylesheet" href="style-taskflow.css">
+    </head>
+<body>
+    <div class="login-container">
+        <form id="form-login">
+            <h2>VINIX7 TaskFlow</h2>
+            <p>Silakan login untuk melanjutkan</p>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email@vinix7.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+
+            <div class="form-group lupa-password">
+                <a href="forgot-password.html">Lupa Password?</a>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="peran">Login Sebagai (Peran)</label>
+                    <select id="peran" required>
+                        <option value="">Pilih Peran...</option>
+                        <option value="Peserta">Peserta</option>
+                        <option value="Mentor">Mentor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="divisi">Divisi Anda</label>
+                    <select id="divisi" required>
+                        <option value="">Pilih Divisi...</option>
+                        <option value="Web Dev & UI/UX">Web Dev & UI/UX</option>
+                        <option value="Bisnis Digital">Bisnis Digital</option>
+                        <option value="Manajemen">Manajemen</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group hidden" id="kelompok-group">
+                <label for="kelompok">Nama Kelompok</label>
+                <input type="text" id="kelompok" placeholder="Contoh: Kelompok 8">
+            </div>
+            
+            <button type="submit" class="btn-login">Login</button>
+
+            <p class="auth-switch">
+                Belum punya akun? <a href="register.html">Daftar di sini</a>
+            </p>
+        </form>
+    </div>
+    <script src="login-taskflow.js"></script>
+</body>
+</html>

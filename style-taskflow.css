@@ -1,0 +1,1527 @@
+/* Pengaturan Dasar */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Kotak Login */
+.login-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-container h2 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.login-container p {
+    color: #777;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+/* Grup Form (Label & Input) */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Sangat penting agar padding tidak merusak lebar */
+}
+
+/* Tombol Login */
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* Biru profesional */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+/* === Gaya Navigasi Atas === */
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: fixed; /* Tetap di atas */
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 22px;
+    color: #007bff; /* Biru */
+    margin: 0;
+}
+
+.nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+/* === REVISI: Memaksa Hapus Garis Bawah === */
+.nav-link,
+.nav-link:link,
+.nav-link:visited,
+.nav-link:hover,
+.nav-link:active {
+    text-decoration: none !important; /* !important untuk memaksa */
+    color: #555; /* Set warna default */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Kita atur ulang gaya 'hover' dan 'active' */
+.nav-link.active, 
+.nav-link:hover {
+    color: #007bff; /* Warna biru saat hover/active */
+}
+
+/* === Gaya Dashboard === */
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto 30px auto; /* Jarak dari navbar di atas */
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.dashboard-header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.btn-primary {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* === Gaya Tabel Proyek === */
+.project-list table {
+    width: 100%;
+    border-collapse: collapse; /* Garis tabel jadi satu */
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden; /* Agar radius di sudut terlihat */
+}
+
+.project-list th, .project-list td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.project-list th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.project-list td {
+    font-size: 16px;
+}
+
+/* Gaya untuk Status */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+.status-baru { background-color: #e0e0e0; color: #333; }
+.status-desain { background-color: #fff0c2; color: #8a6d00; }
+.status-coding { background-color: #cce5ff; color: #004085; }
+.status-selesai { background-color: #d4edda; color: #155724; }
+
+/* Tombol Aksi di Tabel */
+.btn-detail {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+/* === Gaya untuk Halaman Form Tiket === */
+.form-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 100px auto 30px auto; /* Jarak dari navbar */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.form-header {
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.form-header h2 {
+    margin: 0;
+    font-size: 28px;
+    color: #333;
+}
+.form-header p {
+    margin: 10px 0 0 0;
+    font-size: 16px;
+    color: #777;
+}
+
+/* Mengatur input select dan textarea agar seragam */
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Menyamakan font */
+    font-size: 14px; /* Menyamakan font size */
+}
+
+/* Mengatur layout 2 kolom */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+.form-row .form-group {
+    flex: 1; /* Membuat kedua form-group berbagi ruang */
+}
+
+/* Input file kustom */
+.input-file {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tombol Aksi Form */
+.form-actions {
+    display: flex;
+    justify-content: flex-end; /* Tombol di kanan */
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn-secondary {
+    padding: 12px 20px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #555;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+/* === Gaya untuk Halaman Detail Tiket === */
+.detail-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto 30px auto; /* Jarak dari navbar */
+    display: flex;
+    gap: 30px;
+}
+
+/* Kolom Kiri (Utama) */
+.detail-main {
+    flex-grow: 1; /* Mengambil ruang lebih banyak */
+}
+
+.detail-header {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.detail-header .status {
+    margin-bottom: 10px;
+    display: inline-block; /* Agar margin-bottom berfungsi */
+}
+.detail-header h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.detail-brief, .detail-comments {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+.detail-brief h3, .detail-comments h3 {
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+.detail-brief p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Bagian Komentar */
+.comment-list {
+    margin-bottom: 30px;
+}
+.comment {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 15px 0;
+}
+.comment:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.comment-author {
+    font-size: 16px;
+    color: #333;
+}
+.comment p {
+    margin: 8px 0;
+    color: #555;
+}
+.comment-time {
+    font-size: 12px;
+    color: #999;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.comment-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+}
+.comment-form button {
+    align-self: flex-end; /* Tombol di kanan */
+}
+
+/* Kolom Kanan (Sidebar) */
+.detail-sidebar {
+    width: 300px;
+    flex-shrink: 0; /* Agar tidak menyusut */
+}
+.info-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky; /* Tetap di tempat saat di-scroll */
+    top: 100px; /* Jarak dari navbar */
+}
+.info-card h4 {
+    margin-top: 0;
+    font-size: 16px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.info-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+.info-card li {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+.info-card select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.form-row .form-group {
+    flex: 1; /* Membuat kedua form-group berbagi ruang */
+    margin-bottom: 0; /* Hapus margin bawah karena sudah diatur di .form-row */
+}
+/* === Tambahan untuk Form Dropdown === */
+
+/* Mengatur input select agar seragam */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; 
+    background-color: #fff; /* Pastikan background putih */
+}
+
+/* Mengatur layout 2 kolom */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px; /* Jarak sebelum tombol login */
+}
+.form-row .form-group {
+    flex: 1; /* Membuat kedua form-group berbagi ruang */
+    margin-bottom: 0; /* Hapus margin bawah karena sudah diatur di .form-row */
+}
+/* === Gaya untuk Form Dropdown Login === */
+
+/* Mengatur input select agar seragam */
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; 
+    background-color: #fff;
+}
+
+/* Mengatur layout 2 kolom */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px; /* Jarak sebelum tombol login */
+}
+.form-row .form-group {
+    flex: 1; /* Membuat kedua form-group berbagi ruang */
+    margin-bottom: 0;
+}
+/* === Gaya untuk Tombol Aksi di Tabel === */
+
+.aksi-buttons {
+    display: flex;
+    gap: 8px; /* Jarak antar tombol */
+}
+
+.btn-detail, .btn-hapus {
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-detail {
+    background-color: #6c757d; /* Abu-abu */
+}
+
+.btn-hapus {
+    background-color: #E74C3C; /* Merah */
+}
+.btn-hapus:hover {
+    background-color: #c0392b;
+}
+/* === Gaya untuk Halaman Profil === */
+.profile-info-list {
+    margin-top: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 16px;
+}
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #888; /* Abu-abu */
+}
+
+.info-value {
+    color: #333;
+    font-weight: bold;
+}
+/* === Gaya untuk Input File di Komentar === */
+.comment-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.input-file-comment {
+    font-size: 14px;
+    /* Style dasar untuk input file */
+}
+/* Trik untuk membuat tombol input file terlihat lebih baik */
+.input-file-comment::file-selector-button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #555;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.input-file-comment::file-selector-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* === Gaya untuk Tampilan Link Lampiran di Komentar === */
+
+.comment-attachment {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa; /* Latar belakang abu-abu muda */
+    border-radius: 5px;
+    border: 1px solid #eee;
+    font-size: 14px;
+}
+
+.comment-attachment a {
+    text-decoration: none;
+    color: #007bff; /* Biru, warna link */
+    font-weight: bold;
+}
+
+/* Perbaikan untuk Dark Mode (jika ada) */
+body.dark-theme .comment-attachment {
+    background-color: #333;
+    border-color: #444;
+}
+
+body.dark-theme .comment-attachment a {
+    color: #4dabf7; /* Biru muda agar terlihat di dark mode */
+}
+/* === Gaya untuk TAMPILAN GAMBAR di Komentar === */
+
+.comment-attachment {
+    margin-top: 10px;
+}
+.comment-image-preview {
+    max-width: 100%; /* Gambar tidak akan lebih lebar dari kotak komentar */
+    max-height: 250px; /* Batasi tinggi gambar agar tidak berlebihan */
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-top: 5px;
+    cursor: zoom-in; /* Menandakan gambar bisa diklik/zoom */
+}
+
+/* Penyesuaian Dark Mode */
+body.dark-theme .comment-image-preview {
+    border-color: #333;
+}
+/* === Gaya untuk Link Pindah Login/Register === */
+.auth-switch {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.auth-switch a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.auth-switch a:hover {
+    text-decoration: underline;
+}
+.nav-logo {
+    height: 75px;
+    width: auto;
+    display: block; 
+}
+/* === Gaya untuk Filter Dashboard === */
+
+.dashboard-filters {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.filter-group {
+    flex: 1; /* Membuat kedua grup filter berbagi ruang */
+}
+
+.filter-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+    font-size: 14px;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif;
+    font-size: 14px; 
+    background-color: #fff;
+}
+/* === Gaya untuk Kartu Statistik === */
+
+.stat-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.stat-card h4 {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #888;
+    font-weight: normal;
+}
+.stat-card p {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+/* === Gaya untuk Ikon Notifikasi di Navbar === */
+
+.nav-icon-link {
+    position: relative; /* Agar titik merah bisa menempel */
+    color: #555;
+    padding: 5px; /* Sedikit padding agar pas */
+}
+.nav-icon-link .nav-icon {
+    width: 18px;
+    height: 18px;
+    fill: currentColor; /* Mengikuti warna link */
+}
+.nav-icon-link:hover, .nav-icon-link.active {
+    color: #007bff;
+}
+
+/* Titik Merah Notifikasi (Badge) */
+.notification-dot {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 8px;
+    height: 8px;
+    background-color: #E74C3C; /* Merah */
+    border-radius: 50%;
+    border: 2px solid #ffffff; /* Border putih agar terlihat di atas ikon */
+    
+    /* Secara default, kita tampilkan (simulasi) */
+    display: block; 
+}
+
+/* Sembunyikan titik jika kita mau (opsional) */
+.notification-dot.hidden {
+    display: none;
+}
+/* === Gaya untuk Halaman Notifikasi === */
+.notification-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.notification-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+/* Notifikasi yang belum dibaca */
+.notification-item.unread {
+    background-color: #f8f9fa; /* Latar sedikit abu-abu */
+    margin: 0 -40px; /* Lebarkan ke tepi kontainer */
+    padding: 15px 40px; /* Beri padding lagi */
+}
+
+.notification-item p {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+.notification-item p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.notification-item p a:hover {
+    text-decoration: underline;
+}
+
+.notif-time {
+    font-size: 12px;
+    color: #999;
+}
+/* === Gaya Halaman Notifikasi === */
+.notification-list { display: flex; flex-direction: column; }
+.notification-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.notification-item:last-child { border-bottom: none; }
+.notification-item.unread {
+    background-color: #f8f9fa;
+    margin: 0 -40px;
+    padding: 15px 40px;
+}
+.notification-item p {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+.notification-item p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+.notification-item p a:hover { text-decoration: underline; }
+.notif-time {
+    font-size: 12px;
+    color: #999;
+}
+
+.form-group.hidden {
+    display: none;
+}
+/* === PERBAIKAN TAMBAHAN UNTUK STABILITAS === */
+
+/* Pastikan elemen tersembunyi benar-benar tidak terlihat */
+.hidden {
+    display: none !important;
+}
+
+/* Perbaikan untuk tombol hapus di tabel */
+.btn-hapus {
+    padding: 8px 12px;
+    border-radius: 5px;
+    background-color: #E74C3C;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-hapus:hover {
+    background-color: #c0392b;
+}
+
+/* Perbaikan untuk status yang tidak terdefinisi */
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    min-width: 80px;
+}
+
+/* Pastikan filter responsive */
+@media (max-width: 768px) {
+    .dashboard-filters {
+        flex-direction: column;
+    }
+    
+    .stat-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+/* Perbaikan untuk tabel di mobile */
+@media (max-width: 600px) {
+    .project-list table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .stat-cards {
+        grid-template-columns: 1fr;
+    }
+}
+/* PERBAIKAN TAMBAHAN - tidak mengubah existing style */
+
+/* Pastikan elemen yang diperlukan ada */
+#project-table-body:empty::before {
+    content: "Memuat...";
+    text-align: center;
+    display: block;
+    padding: 20px;
+    color: #666;
+}
+
+/* Handle error states secara minimal */
+.status {
+    /* existing styles tetap */
+}
+
+/* Pastikan konsistensi ID comparison */
+.hidden {
+    display: none;
+}
+/* Tambahkan di akhir file style-taskflow.css */
+.error-container {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 100px auto;
+    max-width: 500px;
+}
+
+.error-container h2 {
+    color: #E74C3C;
+    margin-bottom: 15px;
+}
+
+.error-container p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.no-comments {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+/* === GAYA UNTUK KOMPONEN KOMMENTAR YANG DIPERBAIKI === */
+
+.comment {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 15px 0;
+    margin-bottom: 15px;
+}
+
+.comment:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #333;
+    font-size: 14px;
+}
+
+.comment-time {
+    font-size: 12px;
+    color: #999;
+}
+
+.comment-text {
+    margin: 8px 0;
+    color: #555;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+/* === GAYA UNTUK LAMPIRAN PROJECT === */
+.project-attachment {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.project-attachment h4 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+/* === GAYA UNTUK PREVIEW GAMBAR === */
+.image-preview-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fafafa;
+    margin-top: 10px;
+}
+
+.comment-image-preview {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 6px;
+    cursor: zoom-in;
+    transition: transform 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.comment-image-preview:hover {
+    transform: scale(1.02);
+}
+
+.image-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+.image-name {
+    font-weight: bold;
+}
+
+.image-size {
+    color: #999;
+}
+
+/* === GAYA UNTUK PREVIEW FILE === */
+.file-preview {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background: #fafafa;
+    margin-top: 10px;
+}
+
+.file-icon {
+    font-size: 24px;
+}
+
+.file-info {
+    flex: 1;
+}
+
+.file-link {
+    display: block;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+.file-link:hover {
+    text-decoration: underline;
+}
+
+.file-name {
+    font-weight: bold;
+    color: #333;
+}
+
+.file-note {
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+.file-size {
+    font-size: 12px;
+    color: #666;
+}
+
+/* === MODAL ZOOM GAMBAR YANG BISA DI-ZOOM (VERSI PERBAIKAN AKHIR) === */
+.image-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.modal-content {
+    position: relative;
+    background: white;
+    margin: 20px auto;
+    max-width: 95%;
+    max-height: 95vh;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+    flex-shrink: 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.modal-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.modal-btn {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.modal-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.modal-close:hover {
+    color: #333;
+    background: #e0e0e0;
+}
+
+/* KRUSIAL: Memungkinkan scrolling di body modal */
+.modal-body {
+    flex: 1;
+    padding: 0;
+    overflow: auto; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-height dihapus agar body bisa menyesuaikan konten dan layar */
+}
+
+/* KRUSIAL: Wadah gambar, harus relatif agar gambar bisa diposisikan */
+.image-container {
+    width: 100%;
+    height: 100%;
+    position: relative; /* Wadah relatif */
+    min-width: 100%;
+    min-height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: auto dihapus karena sudah ada di modal-body */
+}
+
+/* KRUSIAL: Gambar yang di-zoom */
+.zoomed-image {
+    max-width: none;
+    max-height: none;
+    transition: transform 0.3s ease;
+    
+    position: relative; /* Penting untuk left/top di JS */
+    left: 0;
+    top: 0;
+    
+    transform-origin: 0 0; /* Penting untuk perhitungan pan yang akurat */
+    cursor: zoom-in;
+}
+
+.zoomed-image.zoomed {
+    cursor: grab;
+}
+
+.zoomed-image.zoomed:active {
+    cursor: grabbing;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#zoom-level {
+    font-weight: bold;
+    color: #666;
+    font-size: 14px;
+}
+
+/* === FILE UPLOAD STYLES === */
+.file-upload-section {
+    margin: 10px 0;
+}
+
+.file-upload-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.file-upload-label:hover {
+    background: #e9ecef;
+    border-color: #007bff;
+}
+
+.file-upload-label svg {
+    width: 16px;
+    height: 16px;
+}
+
+.file-preview-name {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+/* === ERROR HANDLING === */
+.error-container {
+    text-align: center;
+    padding: 50px 20px;
+    margin: 100px auto;
+    max-width: 500px;
+}
+
+.error-container h2 {
+    color: #E74C3C;
+    margin-bottom: 15px;
+}
+
+.error-container p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.no-comments {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10px auto;
+        max-width: 98%;
+        max-height: 98vh;
+    }
+    
+    .modal-body {
+        padding: 10px;
+    }
+    
+    .modal-header {
+        padding: 10px 15px;
+    }
+    
+    .modal-footer {
+        padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .detail-container {
+        flex-direction: column;
+    }
+    
+    .detail-sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+    
+    .modal-controls {
+        gap: 3px;
+    }
+    
+    .modal-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 14px;
+    }
+    
+    .modal-close {
+        width: 28px;
+        height: 28px;
+        font-size: 20px;
+    }
+}
+
+/* Dark mode support */
+body.dark-theme .image-preview-container,
+body.dark-theme .file-preview,
+body.dark-theme .project-attachment {
+    background: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-theme .image-modal .modal-content {
+    background: #1a202c;
+    color: white;
+}
+
+body.dark-theme .modal-header,
+body.dark-theme .modal-footer {
+    background: #2d3748;
+    border-color: #4a5568;
+}
+
+body.dark-theme .file-upload-label {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-theme .file-upload-label:hover {
+    background: #4a5568;
+}
+
+body.dark-theme .modal-btn {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.dark-theme .modal-btn:hover {
+    background: #007bff;
+    color: white;
+}
+/* Tambahkan di style-taskflow.css */
+.no-activity {
+    text-align: center;
+    padding: 30px 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #dee2e6;
+    color: #6c757d;
+}
+
+.no-activity p {
+    margin: 0;
+}
+
+.info-card select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+}
+
+.info-card select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Status badges dalam dropdown */
+.group-status {
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+
+.status-baru { background: #e9ecef; color: #495057; }
+.status-desain { background: #fff3cd; color: #856404; }
+.status-coding { background: #cce7ff; color: #004085; }
+.status-review { background: #d1ecf1; color: #0c5460; }
+.status-selesai { background: #d4edda; color: #155724; }
+/* Styles untuk fitur nilai */
+.nilai-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.nilai-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-small {
+    padding: 8px 16px;
+    font-size: 12px;
+}
+
+.nilai-info {
+    margin: 8px 0 0 0;
+    padding: 8px;
+    background: #e8f5e8;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.nilai-display {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.nilai-score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2ecc71;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.nilai-progress {
+    width: 100%;
+    height: 8px;
+    background: #ecf0f1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.nilai-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #e74c3c, #f39c12, #2ecc71);
+    transition: width 0.3s ease;
+}
+
+/* Warna nilai berdasarkan skor */
+.nilai-score.sangat-baik { color: #2ecc71; }
+.nilai-score.baik { color: #f39c12; }
+.nilai-score.cukup { color: #e67e22; }
+.nilai-score.kurang { color: #e74c3c; }
+/* --- Tambahkan atau modifikasi CSS ini --- */
+
+/* 1. PASTIKAN NAVBAR FIXED (Asumsi) */
+.navbar {
+    position: fixed; /* Jika navbar Anda fixed */
+    top: 0;
+    width: 100%;
+    z-index: 100; /* Pastikan navbar selalu di atas */
+    /* Tinggi navbar diasumsikan 70-80px */
+}
+
+/* 2. SOLUSI: Dorong Konten Utama ke Bawah */
+.raport-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px; 
+    
+    /* PERBAIKAN UTAMA: Tambahkan padding-top setinggi navbar + sedikit ruang */
+    padding-top: 100px; /* Nilai ini harus LEBIH BESAR dari tinggi navbar Anda */
+    /* --------------------------------------------------------------------- */
+}
+
+/* Biarkan CSS Anda yang lain seperti ini: */
+.raport-header {
+    /* Hapus padding-top/margin-top jika ada, biarkan padding 20px Anda */
+    padding: 20px; 
+    /* ... */
+}
+/* --- Perbaikan CSS Final --- */
+
+/* 1. Atur Body agar konten dimulai setelah navbar */
+body {
+    /* Atur body ke posisi relatif (jika diperlukan) */
+    padding-top: 120px; /* Coba nilai yang lebih besar (misalnya 120px) */
+    margin: 0;
+}
+
+/* 2. Pastikan Navbar di posisi tetap (fixed) */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Nilai Z-index sangat tinggi */
+    background-color: white; /* Pastikan background-nya solid */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Atur ulang Raport Container */
+.raport-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    /* Hapus padding-top yang sebelumnya ada di sini, biarkan body yang mengatur */
+    /* HANYA JIKA Anda sudah memindahkan padding-top ke body */
+    /* Jika tidak, pertahankan nilai padding-top yang tinggi di sini (misalnya 100px) */
+}

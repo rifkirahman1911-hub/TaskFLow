@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raport Saya - VINIX7 TaskFlow</title>
+    <link rel="stylesheet" href="style-taskflow.css">
+    <style>
+        .raport-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .raport-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+        }
+        
+        .raport-title {
+            margin: 0 0 10px 0;
+            font-size: 2em;
+        }
+        
+        .raport-subtitle {
+            margin: 0;
+            opacity: 0.9;
+            font-weight: normal;
+        }
+        
+        .stats-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .nilai-tinggi { color: #27ae60; }
+        .nilai-sedang { color: #f39c12; }
+        .nilai-rendah { color: #e74c3c; }
+        
+        .progress-ring {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 10px;
+        }
+        
+        .progress-ring-circle {
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
+        }
+        
+        .progress-ring-bg {
+            fill: none;
+            stroke: #ecf0f1;
+            stroke-width: 8;
+        }
+        
+        .progress-ring-fill {
+            fill: none;
+            stroke: #3498db;
+            stroke-width: 8;
+            stroke-dasharray: 226.08;
+            stroke-dashoffset: 226.08;
+            transition: stroke-dashoffset 0.5s ease;
+        }
+        
+        .progress-text {
+            text-anchor: middle;
+            fill: #2c3e50;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .tugas-list {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .tugas-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .tugas-item:last-child {
+            border-bottom: none;
+        }
+        
+        .tugas-info {
+            flex: 1;
+        }
+        
+        .tugas-judul {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .tugas-meta {
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .tugas-nilai {
+            text-align: right;
+            min-width: 80px;
+        }
+        
+        .nilai-score {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .feedback-badge {
+            background: #3498db;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            cursor: pointer;
+        }
+        
+        .feedback-badge:hover {
+            background: #2980b9;
+        }
+        
+        .feedback-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        
+        .feedback-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .feedback-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .feedback-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .feedback-mentor {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .feedback-date {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        
+        .feedback-text {
+            color: #34495e;
+            line-height: 1.4;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+        
+        .achievement-section {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .achievement-item {
+            text-align: center;
+            padding: 15px;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .achievement-item.achieved {
+            border-color: #27ae60;
+            background: #f8fff9;
+        }
+        
+        .achievement-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .achievement-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .achievement-desc {
+            font-size: 0.8em;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="img/vinix.jpg" alt="VINIX7 Logo" class="nav-logo">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="raport-saya.html" class="nav-link active">Raport Saya</a></li>
+                <li class="nav-item">
+                    <a href="notifikasi.html" class="nav-link nav-icon-link">
+                        <span class="notification-dot hidden"></span>
+                        <svg class="nav-icon" viewBox="0 0 448 512" fill="currentColor"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24.1-6.4 29.2-17.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 448c-17.7 0-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32s-14.3-32-32-32z"/></svg>
+                    </a>
+                </li>
+                <li class="nav-item"><a href="profil-mentor.html" class="nav-link">Profil</a></li>
+                <li class="nav-item"><a href="#" id="nav-logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="raport-container">
+        <div class="raport-header">
+            <h1 class="raport-title">📚 Raport Saya</h1>
+            <p class="raport-subtitle" id="raport-subtitle">Memuat data nilai...</p>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="stats-overview">
+            <div class="stat-card">
+                <div class="progress-ring">
+                    <svg viewBox="0 0 80 80" class="progress-ring">
+                        <circle class="progress-ring-bg" cx="40" cy="40" r="36"></circle>
+                        <circle class="progress-ring-fill" cx="40" cy="40" r="36" id="progress-ring"></circle>
+                        <text class="progress-text" x="40" y="45" id="progress-text">0%</text>
+                    </svg>
+                </div>
+                <div class="stat-label">Rata-rata Nilai</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total-tugas">0</div>
+                <div class="stat-label">Total Tugas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-tugas-selesai">0</div>
+                <div class="stat-label">Tugas Dinilai</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number nilai-tinggi" id="stat-nilai-tertinggi">0</div>
+                <div class="stat-label">Nilai Tertinggi</div>
+            </div>
+        </div>
+
+        <!-- Achievement Section -->
+        <div class="achievement-section">
+            <h3>🏆 Achievement</h3>
+            <div class="achievement-grid" id="achievement-grid">
+                <!-- Achievement items akan diisi oleh JavaScript -->
+            </div>
+        </div>
+
+        <!-- Daftar Tugas -->
+        <div class="tugas-list">
+            <div id="tugas-list-content">
+                <div class="loading">Memuat data tugas...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Feedback -->
+    <div id="feedback-modal" class="feedback-modal">
+        <div class="feedback-content">
+            <div class="feedback-header">
+                <h3>💬 Feedback dari Mentor</h3>
+                <button onclick="closeFeedbackModal()" style="background: none; border: none; font-size: 1.5em; cursor: pointer;">&times;</button>
+            </div>
+            <div id="feedback-modal-content">
+                <!-- Content akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="global.js"></script>
+    <script src="raport-saya.js"></script>
+</body>
+</html>

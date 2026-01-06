@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - VINIX7 TaskFlow</title>
+    <link rel="stylesheet" href="style-taskflow.css">
+    </head>
+<body>
+    <div class="login-container">
+        <form id="form-register">
+            <h2>Buat Akun Baru & Pilih Paket</h2>
+            <p>Daftar untuk mulai berkolaborasi</p>
+            
+            <div class="form-group">
+                <label for="nama">Nama Lengkap Anda</label>
+                <input type="text" id="nama" placeholder="Contoh: Grevan" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="email@vinix7.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="peran">Saya adalah</label>
+                    <select id="peran" required>
+                        <option value="">Pilih Peran...</option>
+                        <option value="Peserta">Peserta</option>
+                        <option value="Mentor">Mentor</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="divisi">Divisi Saya</label>
+                    <select id="divisi" required>
+                        <option value="">Pilih Divisi...</option>
+                        <option value="Web Dev & UI/UX">Web Dev & UI/UX</option>
+                        <option value="Bisnis Digital">Bisnis Digital</option>
+                        <option value="Manajemen">Manajemen (Mentor)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group hidden" id="kelompok-group">
+                <label for="kelompok">Nama Kelompok</label>
+                <input type="text" id="kelompok" placeholder="Contoh: Kelompok 8">
+            </div>
+            
+            <div style="border-top: 1px solid #ddd; padding-top: 15px; margin-top: 20px;">
+                <h3>Pilih Paket Program</h3>
+                
+                <div class="form-group">
+                    <label for="paket">Pilih Paket Program</label>
+                    <select id="paket" required>
+                        <option value="">Pilih Paket...</option>
+                        <option value="Free Access" data-price="0">Free Access (Gratis)</option>
+                        <option value="Basic Access" data-price="150000">Basic Access (Rp 150.000)</option>
+                        <option value="Premium Bootcamp" data-price="250000">Premium Bootcamp (Rp 250.000)</option>
+                        <option value="MBKM Full Package" data-price="350000">MBKM Full Package (Rp 350.000)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Total Pembayaran</label>
+                    <input type="text" id="harga-display" value="Rp 0" disabled>
+                </div>
+
+                <div id="payment-proof-section">
+                    <div class="form-group">
+                        <p style="font-size: 0.9em; margin-bottom: 5px;">Silakan transfer ke **[Nomor Rekening/E-Wallet VINIX7 Anda]**. Unggah bukti di bawah ini.</p>
+                        <label for="bukti-transfer">Bukti Transfer (Foto/File)</label>
+                        <input type="file" id="bukti-transfer" accept=".jpg,.jpeg,.png,.pdf" required>
+                    </div>
+                </div>
+                </div>
+            
+            <button type="submit" class="btn-login">Daftar & Kirim Verifikasi</button>
+
+            <p class="auth-switch">
+                Sudah punya akun? <a href="login-taskflow.html">Login di sini</a>
+            </p>
+        </form>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+</html>

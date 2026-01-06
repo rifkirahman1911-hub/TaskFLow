@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekap Peserta - VINIX7 TaskFlow</title>
+    <link rel="stylesheet" href="style-taskflow.css">
+    <style>
+        .rekap-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .rekap-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .rekap-title {
+            color: #2c3e50;
+            margin: 0;
+        }
+        
+        .rekap-controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        
+        .rekap-table-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .rekap-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .rekap-table th {
+            background: #34495e;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .rekap-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .rekap-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .nilai-cell {
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .nilai-tinggi { color: #27ae60; }
+        .nilai-sedang { color: #f39c12; }
+        .nilai-rendah { color: #e74c3c; }
+        .nilai-kosong { color: #95a5a6; font-style: italic; }
+        
+        .rata-rata-cell {
+            background: #f8f9fa;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .progress-cell {
+            min-width: 100px;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 5px;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e74c3c, #f39c12, #27ae60);
+            border-radius: 4px;
+        }
+        
+        .progress-text {
+            font-size: 0.8em;
+            color: #7f8c8d;
+            text-align: center;
+        }
+        
+        .kelompok-header {
+            background: #f8f9fa !important;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .kelompok-header:hover {
+            background: #e9ecef !important;
+        }
+        
+        .detail-row {
+            display: none;
+        }
+        
+        .detail-row.show {
+            display: table-row;
+        }
+        
+        .detail-cell {
+            padding: 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .detail-item {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .detail-judul {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+        
+        .detail-meta {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        
+        .detail-nilai {
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .export-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .export-btn:hover {
+            background: #219a52;
+        }
+        
+        .view-detail-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .view-detail-btn:hover {
+            background: #2980b9;
+        }
+        
+        .no-data {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            .rekap-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .rekap-controls {
+                justify-content: center;
+            }
+            
+            .rekap-table-container {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <img src="img/vinix.jpg" alt="VINIX7 Logo" class="nav-logo">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                <li class="nav-item"><a href="rekap-peserta.html" class="nav-link active">Rekap Peserta</a></li>
+                <li class="nav-item">
+                    <a href="notifikasi.html" class="nav-link nav-icon-link">
+                        <span class="notification-dot hidden"></span>
+                        <svg class="nav-icon" viewBox="0 0 448 512" fill="currentColor"><path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24.1-6.4 29.2-17.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm0 448c-17.7 0-32 14.3-32 32s14.3 32 32 32s32-14.3 32-32s-14.3-32-32-32z"/></svg>
+                    </a>
+                </li>
+                <li class="nav-item"><a href="profil-mentor.html" class="nav-link">Profil</a></li>
+                <li class="nav-item"><a href="#" id="nav-logout" class="nav-link">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="rekap-container">
+        <div class="rekap-header">
+            <h1 class="rekap-title">📊 Rekap Peserta</h1>
+            <div class="rekap-controls">
+                <div class="filter-group">
+                    <select id="filter-divisi" class="filter-select">
+                        <option value="semua">Semua Divisi</option>
+                    </select>
+                    <select id="filter-kelompok" class="filter-select">
+                        <option value="semua">Semua Kelompok</option>
+                    </select>
+                </div>
+                <button class="export-btn" onclick="exportToCSV()">
+                    📥 Export CSV
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-cards">
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total-kelompok">0</div>
+                <div class="stat-label">Total Kelompok</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-total-peserta">0</div>
+                <div class="stat-label">Total Peserta</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-rata-rata">0</div>
+                <div class="stat-label">Rata-rata Nilai</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="stat-tuntas">0%</div>
+                <div class="stat-label">Kelompok Tuntas</div>
+            </div>
+        </div>
+
+        <!-- Rekap Table -->
+        <div class="rekap-table-container">
+            <div id="rekap-table-content">
+                <div class="loading">Memuat data rekap peserta...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="global.js"></script>
+    <script src="rekap-peserta.js"></script>
+</body>
+</html>
